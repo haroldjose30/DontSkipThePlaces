@@ -14,16 +14,25 @@ namespace DontSkipThePlaces
 {
     public partial class MainPage : ContentPage
     {
+		double mocklatitude = -23.581776;
+		double mockLongitude = -46.700551;
+
         public MainPage()
         {
             InitializeComponent();
+        }
 
-            //initialize the map
-			MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(
-            new Position(-23.581776, -46.700551),
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			//initialize the map
+            MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(
+                new Position(mocklatitude, mockLongitude),
                          Distance.FromMiles(0.5)));
 			
-        }
+			GetDataFromNear();
+		}
 
 
 		RootPlace oRootPlace;
@@ -36,7 +45,7 @@ namespace DontSkipThePlaces
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="e">E.</param>
-		async void BtnGetData_Clicked(object sender, System.EventArgs e)
+		async void GetDataFromNear()
 		{
 
 			try
@@ -45,7 +54,7 @@ namespace DontSkipThePlaces
 				IndLoading.IsVisible = isBusy;
 				IndLoading.IsRunning = isBusy;
 
-                const string RestUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-23.581776,%20-46.700551&radius=5000&type=restaurant&keyword=cruise&key=AIzaSyDilcr5nJRznxSc10APEG8wgBzVqyQ_3wM";
+				string RestUrl = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={mocklatitude.ToString()},%20{mockLongitude.ToString()}&radius=5000&type=restaurant&keyword=cruise&key={Constants.ApiKey}";
                 var uri = new Uri(string.Format(RestUrl, string.Empty));
 
                 HttpClient client = new HttpClient();

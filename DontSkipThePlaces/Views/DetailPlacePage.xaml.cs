@@ -17,6 +17,18 @@ namespace DontSkipThePlaces.Views
         {
 		    InitializeComponent();
 			oPlace = _Place;
+
+            //configure image for stars rating
+			if (oPlace.rating >= 5)
+				imgStar5.Source = "star_black";
+			if (oPlace.rating >= 4)
+                imgStar4.Source = "star_black";
+			if (oPlace.rating >= 3)
+                imgStar3.Source = "star_black";
+			if (oPlace.rating >= 2)
+                imgStar2.Source = "star_black";
+			if (oPlace.rating >= 1)
+                imgStar1.Source = "star_black";
 		
         }
 
@@ -44,7 +56,7 @@ namespace DontSkipThePlaces.Views
 
 
 
-				string RestUrl = $"https://maps.googleapis.com/maps/api/place/details/json?placeid={oPlace.id}&key=AIzaSyDilcr5nJRznxSc10APEG8wgBzVqyQ_3wM\n";
+				string RestUrl = $"https://maps.googleapis.com/maps/api/place/details/json?placeid={oPlace.place_id}&key={Constants.ApiKey}\n";
                 var uri = new Uri(string.Format(RestUrl, string.Empty));
 
                 HttpClient client = new HttpClient();
@@ -55,6 +67,7 @@ namespace DontSkipThePlaces.Views
                     var content = await response.Content.ReadAsStringAsync();
 					oRootPlaceDetail = JsonConvert.DeserializeObject<RootPlaceDetail>(content);
 					this.BindingContext = oRootPlaceDetail.result;
+					ListViewlista.ItemsSource = oRootPlaceDetail.result.reviews;
                 }
             }
 			finally

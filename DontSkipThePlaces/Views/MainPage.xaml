@@ -7,7 +7,6 @@
     x:Class="DontSkipThePlaces.MainPage"
     Title="Dont Skip The Places">
     <StackLayout>
-        <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
         <maps:Map 
             WidthRequest="320" 
             HeightRequest="200"
@@ -18,8 +17,9 @@
             VerticalOptions="FillAndExpand"
         />
         
-        <Button Text="Search Restaurants Near from me" Clicked="BtnGetData_Clicked"/>
-        <Button x:Name="BtnFilterOptions" Text="Show Filter Options" Clicked="BtnShowFilter_Clicked"/>
+        <Button x:Name="BtnFilterOptions" Text="Show List" Clicked="BtnShowFilter_Clicked"/>
+        <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
+       
 
         <StackLayout IsVisible="false" x:Name="StcFilterOptions">
             <Entry x:Name="EntRadius" Text="5000" Placeholder="Radius in metter" Keyboard="Numeric"/>
