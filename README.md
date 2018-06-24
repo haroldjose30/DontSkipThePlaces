@@ -11,9 +11,17 @@ Don't Skip The Place is an App for search restaurants near from you, using googl
 
 3 - On Detail View the user can see, the rating, photos, comments and reviews about the restaurant
 
+# Android
 <p align="center">
-  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/01_MainPage.png" width="350"/>
-  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/02_DetailPage.png" width="350"/>
-  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/03_DetailPage.png" width="350"/>
+  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/01_MainPage.png" width="300"/>
+  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/02_DetailPage.png" width="300"/>
+  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/03_DetailPage.png" width="300"/>
+</p>
+
+# IOS
+<p align="center">
+  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/01_MainPage_IOS.png" width="300"/>
+  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/02_DetailPage_IOS.png" width="300"/>
+  <img src="https://github.com/haroldjose30/DontSkipThePlaces/blob/master/screenshot/03_DetailPage_IOS.png" width="300"/>
 </p>
 
