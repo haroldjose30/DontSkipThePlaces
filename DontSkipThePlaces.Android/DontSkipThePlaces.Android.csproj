@@ -105,6 +105,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\star_black.png" />
     <AndroidResource Include="Resources\drawable\star_blank.png" />
+    <AndroidResource Include="Resources\drawable\call.png" />
+    <AndroidResource Include="Resources\drawable\car.png" />
+    <AndroidResource Include="Resources\drawable\web.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

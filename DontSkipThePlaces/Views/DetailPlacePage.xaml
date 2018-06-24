@@ -9,27 +9,29 @@
             <StackLayout Margin="5,5,5,5">
                 <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
                 <StackLayout Orientation="Horizontal">
-                     <Image Source="{Binding icon}" />
-                     <Label Text="{Binding name}" FontSize="Large"/>
+                     <Image Source="{Binding icon}" WidthRequest="50" HeightRequest="50"/>
+                     <Label Text="{Binding name}" FontSize="Large" TextColor="Blue" VerticalTextAlignment="Center"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                     <Label Text="Addr:" FontAttributes="Bold"/>
-                     <Label Text="{Binding formatted_address}"  TextColor="Blue"/>
+                     <Image Source="car" WidthRequest="25" HeightRequest="25"/>
+                     <Label Text="{Binding formatted_address}"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                     <Label Text="Phone:" FontAttributes="Bold"/>
+                     <Image Source="call" WidthRequest="25" HeightRequest="25"/>
                      <Label Text="{Binding formatted_phone_number}"/>
                 </StackLayout>
 
                  <StackLayout Orientation="Horizontal">
-                     <Label Text="Website:" FontAttributes="Bold"/>
+                     <Image Source="web" WidthRequest="25" HeightRequest="25"/>
                      <Label Text="{Binding website}"/>
                 </StackLayout>
                
-                <Label Text="Rating" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding rating}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Rating " FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding rating}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Image x:Name="imgStar1" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
                     <Image x:Name="imgStar2" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
@@ -39,13 +41,14 @@
                 </StackLayout>
 
                     <ListView x:Name="ListViewlistaImage"
-                              RowHeight="250"
+                              RowHeight="300"
                               VerticalOptions="Start"
-                              HeightRequest="240"
-                              WidthRequest="440"
+                              HeightRequest="300"
+                              WidthRequest="300"
                               SeparatorVisibility="None"
                               Rotation="270"
-                              HorizontalOptions="CenterAndExpand">
+                              HorizontalOptions="CenterAndExpand"
+                              SelectionMode="None">
                       <ListView.ItemTemplate>
                         <DataTemplate>
                           <ViewCell>
@@ -83,7 +86,7 @@
 
                                                     <StackLayout Grid.Row="0" Grid.Column="1">
                                                         <Label Text="{Binding author_name}" FontSize="16" />
-                                                        <Label Text="{Binding text}" FontSize="14"/>
+                                                        <Label Text="{Binding text_formated}" FontSize="14"/>
                                                     </StackLayout>
                                                    </Grid>
                                      </Frame>
