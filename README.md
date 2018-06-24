@@ -5,11 +5,11 @@ Don't Skip The Place is an App for search restaurants near from you, using googl
 
 
 # The Process Flow
-1 - The Main View of this app, will open the google maps and show the restaurants near from you.
+1 - The Main View of this app will open the google maps and show the restaurants near from you.
 
 2 - The user can click on the pin to open a new screen with more details of restaurant selected.
 
-3 - On Detail View the user can see, the rating, photos, comments and reviews about the restaurant
+3 - On Detail View the user can see the rating, photos, comments and reviews about the restaurant
 
 # Android App
 <p align="center">
