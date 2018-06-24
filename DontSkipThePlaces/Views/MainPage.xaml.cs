@@ -54,6 +54,8 @@ namespace DontSkipThePlaces
 				IndLoading.IsVisible = isBusy;
 				IndLoading.IsRunning = isBusy;
 
+				Lblinfo.Text = "Loading Restaurant near from you..."; 
+					
 				string RestUrl = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={mocklatitude.ToString()},%20{mockLongitude.ToString()}&radius=5000&type=restaurant&keyword=cruise&key={Constants.ApiKey}";
                 var uri = new Uri(string.Format(RestUrl, string.Empty));
 
@@ -95,6 +97,8 @@ namespace DontSkipThePlaces
                                  Distance.FromMiles(1)));
                     }
 
+					Lblinfo.Text = $"{oRootPlace.results.Count.ToString()} Restaurants Found!"; 
+
                 }
 			}
 			finally
@@ -122,30 +126,12 @@ namespace DontSkipThePlaces
 
 				if (place != null)
 				{
+					//open the new page showing de pin details
 					Navigation.PushAsync(new DetailPlacePage(place));
 
 				}
-
-				//open the new page showing de pin details
 			}
 		}
-
-        /// <summary>
-        /// Buttons the show filter stacklayout.
-        /// </summary>
-        /// <param name="sender">Sender.</param>
-        /// <param name="e">E.</param>
-		async void BtnShowFilter_Clicked(object sender, System.EventArgs e)
-		{
-			StcFilterOptions.IsVisible = !StcFilterOptions.IsVisible;
-
-			if (StcFilterOptions.IsVisible)
-				BtnFilterOptions.Text = "Hide Filter Options";
-			else
-				BtnFilterOptions.Text = "Show Filter Options";
-				
-		}
-
 
     }
 }

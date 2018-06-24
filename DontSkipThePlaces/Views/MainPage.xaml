@@ -6,7 +6,10 @@
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="DontSkipThePlaces.MainPage"
     Title="Dont Skip The Places">
+
     <StackLayout>
+        <Label x:Name="Lblinfo" Text="Loading Restaurants near from you..." FontSize="Large" HorizontalTextAlignment="Center"/>
+        <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
         <maps:Map 
             WidthRequest="320" 
             HeightRequest="200"
@@ -16,15 +19,5 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
         />
-        
-        <Button x:Name="BtnFilterOptions" Text="Show List" Clicked="BtnShowFilter_Clicked"/>
-        <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
-       
-
-        <StackLayout IsVisible="false" x:Name="StcFilterOptions">
-            <Entry x:Name="EntRadius" Text="5000" Placeholder="Radius in metter" Keyboard="Numeric"/>
-        </StackLayout>
-        
-
     </StackLayout>
 </ContentPage>

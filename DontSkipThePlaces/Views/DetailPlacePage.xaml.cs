@@ -68,6 +68,16 @@ namespace DontSkipThePlaces.Views
 					oRootPlaceDetail = JsonConvert.DeserializeObject<RootPlaceDetail>(content);
 					this.BindingContext = oRootPlaceDetail.result;
 					ListViewlista.ItemsSource = oRootPlaceDetail.result.reviews;
+
+                    //get the first photo
+					if (oRootPlaceDetail?.result?.photos?.Count > 0)
+					{
+						//string PhotoRef = oRootPlaceDetail.result.photos[0].photo_reference;
+                        //string PhotoUrl = $"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={PhotoRef}&key={Constants.ApiKey}";
+						//ImgPhoto.Source = PhotoUrl;
+						ListViewlistaImage.ItemsSource = oRootPlaceDetail.result.photos;
+
+					}
                 }
             }
 			finally

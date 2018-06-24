@@ -5,71 +5,93 @@
     x:Class="DontSkipThePlaces.Views.DetailPlacePage"
     Title="Place Details">
     <ContentPage.Content>
-        <StackLayout>
-            <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
-            <StackLayout Orientation="Vertical">
-                 <Image Source="{Binding icon}" />
-                 <Label Text="{Binding name}" FontSize="Large"/>
-            </StackLayout>
+        <ScrollView>
+            <StackLayout Margin="5,5,5,5">
+                <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
+                <StackLayout Orientation="Horizontal">
+                     <Image Source="{Binding icon}" />
+                     <Label Text="{Binding name}" FontSize="Large"/>
+                </StackLayout>
 
-            <StackLayout Orientation="Vertical">
-                 <Label Text="Address:" FontAttributes="Bold"/>
-                 <Label Text="{Binding formatted_address}"/>
-            </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                     <Label Text="Addr:" FontAttributes="Bold"/>
+                     <Label Text="{Binding formatted_address}"  TextColor="Blue"/>
+                </StackLayout>
 
-            <StackLayout Orientation="Vertical">
-                 <Label Text="Phone:" FontAttributes="Bold"/>
-                 <Label Text="{Binding formatted_phone_number}"/>
-            </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                     <Label Text="Phone:" FontAttributes="Bold"/>
+                     <Label Text="{Binding formatted_phone_number}"/>
+                </StackLayout>
 
-             <StackLayout Orientation="Vertical">
-                 <Label Text="Website:" FontAttributes="Bold"/>
-                 <Label Text="{Binding website}"/>
-            </StackLayout>
-           
-            <Label Text="Rating:" FontSize="Large" FontAttributes="Bold"/>
-            <StackLayout Orientation="Vertical">
-                <Label Text="{Binding rating}" FontSize="Large" FontAttributes="Bold"/>
-                <Image x:Name="imgStar1" Source="star_blank"/>
-                <Image x:Name="imgStar2" Source="star_blank"/>
-                <Image x:Name="imgStar3" Source="star_blank"/>
-                <Image x:Name="imgStar4" Source="star_blank"/>
-                <Image x:Name="imgStar5" Source="star_blank"/>
-            </StackLayout>
-            
-             <ListView
-                x:Name="ListViewlista" 
-                BackgroundColor="Transparent"
-                RowHeight="140"
-                SeparatorVisibility="None">
-                <ListView.ItemTemplate>
+                 <StackLayout Orientation="Horizontal">
+                     <Label Text="Website:" FontAttributes="Bold"/>
+                     <Label Text="{Binding website}"/>
+                </StackLayout>
+               
+                <Label Text="Rating" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding rating}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image x:Name="imgStar1" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
+                    <Image x:Name="imgStar2" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
+                    <Image x:Name="imgStar3" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
+                    <Image x:Name="imgStar4" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
+                    <Image x:Name="imgStar5" Source="star_blank" WidthRequest="25" HeightRequest="25"/>
+                </StackLayout>
+
+                    <ListView x:Name="ListViewlistaImage"
+                              RowHeight="250"
+                              VerticalOptions="Start"
+                              HeightRequest="240"
+                              WidthRequest="440"
+                              SeparatorVisibility="None"
+                              Rotation="270"
+                              HorizontalOptions="CenterAndExpand">
+                      <ListView.ItemTemplate>
                         <DataTemplate>
-                             <ViewCell>
-                                  <Frame  Margin="9,12,9,0"
-                                            HasShadow ="true"
-                                            HeightRequest="80"
-                                             BackgroundColor="#FCE9D1">
-                                            <Grid>
-                                              <Grid.RowDefinitions>
-                                                <RowDefinition Height="*" />
-                                              </Grid.RowDefinitions>
-                                              <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="80" />
-                                                <ColumnDefinition Width="*" />
-                                              </Grid.ColumnDefinitions>
-
-                                                <Image Source="{Binding profile_photo_url}" Grid.Row="0" Grid.Column="0" />
-
-                                                <StackLayout Grid.Row="0" Grid.Column="1">
-                                                    <Label Text="{Binding author_name}" FontSize="16" />
-                                                    <Label Text="{Binding text}" FontSize="14"/>
-                                                </StackLayout>
-                                               </Grid>
-                                 </Frame>
-                              </ViewCell>
+                          <ViewCell>
+                            <ContentView Rotation="90" Padding="12">
+                              <Image Source="{Binding photo_url}" Aspect="AspectFill" />
+                            </ContentView>
+                          </ViewCell>
                         </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                      </ListView.ItemTemplate>
+                    </ListView>
+                
+                
+                 <ListView
+                    x:Name="ListViewlista" 
+                    BackgroundColor="Transparent"
+                    RowHeight="140"
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                            <DataTemplate>
+                                 <ViewCell>
+                                      <Frame  Margin="9,12,9,0"
+                                                HasShadow ="true"
+                                                HeightRequest="80"
+                                                 BackgroundColor="#FCE9D1">
+                                                <Grid>
+                                                  <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                  </Grid.RowDefinitions>
+                                                  <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80" />
+                                                    <ColumnDefinition Width="*" />
+                                                  </Grid.ColumnDefinitions>
+
+                                                    <Image Source="{Binding profile_photo_url}" Grid.Row="0" Grid.Column="0" />
+
+                                                    <StackLayout Grid.Row="0" Grid.Column="1">
+                                                        <Label Text="{Binding author_name}" FontSize="16" />
+                                                        <Label Text="{Binding text}" FontSize="14"/>
+                                                    </StackLayout>
+                                                   </Grid>
+                                     </Frame>
+                                  </ViewCell>
+                            </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
