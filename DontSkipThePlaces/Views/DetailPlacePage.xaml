@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="DontSkipThePlaces.Views.DetailPlacePage"
+    Title="Place Details">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator x:Name="IndLoading" IsVisible="false" IsRunning="false"/>
+            <Image Source="{Binding icon}"/>
+            <Label Text="{Binding name}" FontSize="Large"/>
+            <Label Text="{Binding vicinity}"/>
+            <Label Text="{Binding international_phone_number}"/>
+            <Label Text="{Binding website}"/>
+            <Label Text="{Binding rating}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
