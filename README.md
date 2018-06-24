@@ -14,6 +14,7 @@ Don't Skip The Place is an App for search restaurants near from you, using googl
 
 # YouTube Demonstration
 https://youtu.be/G7JP3S5nT90
+[![Watch the video](https://youtu.be/G7JP3S5nT90)](https://youtu.be/G7JP3S5nT90)
 
 # Android App
 <p align="center">
